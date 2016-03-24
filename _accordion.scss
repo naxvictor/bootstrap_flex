@@ -1,0 +1,40 @@
+/*-----------------------------------------
+Accordion
+-----------------------------------------*/
+.accordion-list {
+  margin: 0;
+}
+
+.accordion-list dt {
+  padding: 0.6rem;
+  border-left: 8px solid $base-color;
+  margin-top: 0.8rem;
+  border-radius: 2px;
+  font-size: 0.875rem;
+  cursor: pointer;
+  background: #ffffff;
+  color: #5d5d5d;
+  font-weight: 600;
+}
+
+.accordion-list dt.active {
+  background-color: $base-color;
+  border-left-color: $grey;
+  color: #ffffff;
+}
+
+.accordion-list dd {
+  display: none;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-top: none;
+  margin: 0;
+  padding: 1rem;
+  font-size: 0.875rem;
+}
+
+.accordion-list dd:last-of-type {
+  border-top: 1px solid white;
+  position: relative;
+  top: -1px;
+}

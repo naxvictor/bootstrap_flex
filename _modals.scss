@@ -1,0 +1,142 @@
+//
+// Modals
+// --------------------------------------------------
+
+// .modal-open      - body class for killing the scroll
+// .modal           - container to scroll within
+// .modal-dialog    - positioning shell for the actual modal
+// .modal-content   - actual modal w/ bg and corners and shit
+
+// Kill the scroll on the body
+.modal-open {
+  overflow: hidden;
+}
+
+// Container that the modal scrolls within
+.modal-wrap {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 9999;
+  -webkit-overflow-scrolling: touch;
+  outline: 0;
+  overflow: auto;
+    text-align: center;
+    white-space: nowrap;
+  &::after {
+    display: inline-block;
+    vertical-align: middle;
+    width: 0;
+    height: 100%;
+    content: '';
+  }
+
+  .modal-dialog {
+    margin: 0;
+    text-align: left;
+    border-radius: $modal-radius;
+    overflow: hidden;
+    white-space: normal;
+    box-shadow: 0 0 8px $darker;
+  }
+  // Actual modal
+  .modal-content {
+    position: relative;
+    background-clip: padding-box;
+    // Remove focus outline from opened modal
+    outline: 0;
+    padding: 10px;
+    background-color: $modal-content-bg;
+  }
+  // Title text within header
+  .modal-title {
+    position: relative;
+    background-color: $modal-title-bg;
+    padding: 10px 15px;
+    border-bottom: 1px solid $darker;
+    h3 {
+      display: inline;
+      font-size: 1rem;
+      line-height: 1rem;
+      color: $grey;
+      font-weight: bold;
+      i{
+        font-weight: bold;
+        margin-right: 0.5rem;
+      }
+    }
+    .close-modal {
+
+      display: block;
+      color: $grey;
+      width: 1.2rem;
+      height: 1.2rem;
+      font-weight: bold;
+      text-align: center;
+      cursor: pointer;
+      font-size: 1.4rem;
+      line-height: 1.2rem;
+      &:after {
+        content: "\2716";
+      }
+    }
+  }
+}
+
+
+.fixed-background__modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: $modal-backdrop-bg;
+}
+
+
+.modal {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.modal-sm {
+  width: $modal-sm;
+}
+.modal-md {
+  width: $modal-md;
+}
+.modal-lg {
+  width: $modal-lg;
+}
+
+@media (max-width: 768px) {
+  .modal-md {
+    width: $modal-sm;
+  }
+  .modal-lg {
+    width: $modal-sm;
+  }
+}
+
+
+
+
+// Modal body
+// Where all modal content resides (sibling of .modal-header and .modal-footer)
+.modal-body {
+  position: relative;
+}
+
+
+// Measure scrollbar width for padding body during modal show/hide
+.modal-scrollbar-measure {
+  position: absolute;
+  top: -9999px;
+  width: 50px;
+  height: 50px;
+  overflow: scroll;
+}
+
